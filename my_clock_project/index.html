@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Clock Project</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>My Clock Project</h1>
+
+    <section class="clock-card">
+      <div class="digital">
+        <div id="time">--:--:--</div>
+        <div id="date">Loading date...</div>
+      </div>
+
+      <div class="analog" aria-hidden="true">
+        <svg id="analogClock" viewBox="0 0 200 200" width="200" height="200">
+          <circle cx="100" cy="100" r="95" class="face"/>
+          <!-- hour marks -->
+          <g id="marks"></g>
+          <line id="hour" class="hand hour-hand" x1="100" y1="100" x2="100" y2="55"/>
+          <line id="minute" class="hand minute-hand" x1="100" y1="100" x2="100" y2="35"/>
+          <line id="second" class="hand second-hand" x1="100" y1="110" x2="100" y2="30"/>
+          <circle cx="100" cy="100" r="3" class="hub"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="controls">
+      <label>
+        <input type="checkbox" id="showSeconds" checked/>
+        Show seconds
+      </label>
+      <label>
+        <input type="checkbox" id="use24" />
+        Use 24-hour
+      </label>
+    </section>
+
+    <footer>
+      <small>Uses system time via JavaScript <code>Date</code>. Updates every second.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
